@@ -19,7 +19,8 @@ for field_name, values in streamlit_options["single_select_fields"].items():
 user_options
 
 if st.button('Predict'):
+    print('Innnnnnnnnn')
     "See Your Choice!"
     data = json.dumps(user_options, indent=2)
-    r = requests.post('htpp://127.0.0.1:8000/predict',data=data)
+    r = requests.post('http://127.0.0.1:8000/predict',data=data)
     st.write(r.json())
